@@ -1,0 +1,22 @@
+NOR GATE
+
+CODE
+module nor_g (a,b,y);
+input a,b;
+output y;
+assign y= ~(a|b);
+endmodule
+
+TEST BENCH
+module norg_tb;
+reg a;
+reg b;
+wire y;
+and_g uut(.a(a), .b(b), .y(y));
+initial begin
+	a=0;b=0;#50;
+	a=0;b=1;#50;
+	a=1;b=0;#50;
+	a=1;b=1;#50;
+end 
+endmodule
