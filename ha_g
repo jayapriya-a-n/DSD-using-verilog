@@ -1,0 +1,26 @@
+HALF ADDER
+
+CODE
+
+module ha_g(a,b,s,c);
+input a,b;
+output s,c;
+assign s= a ^ b;
+assign c= a & b;
+endmodule
+
+TESTBENCH 
+
+module hag_tb;
+reg a;
+reg b;
+wire s;
+wire c;
+ha_g(.a(a), .b(b), .s(s), .c(c));
+initial begin
+    a=0;b=0;#50;
+    a=0;b=1;#50;
+    a=1;b=0;#50;
+    a=1;b=1;#50;
+ end
+ endmodule
