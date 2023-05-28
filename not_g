@@ -1,0 +1,20 @@
+NOT GATE
+
+CODE
+module not_g (a,y);
+input a;
+output y;
+assign y = (~a);
+endmodule
+
+TEST BENCH
+module notg_tb;
+reg a;
+reg b;
+wire y;
+and_g uut(.a(a) , .y(y));
+initial begin
+	a=0;#50;
+	a=0;#50;
+end 
+endmodule
