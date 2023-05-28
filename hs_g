@@ -1,0 +1,26 @@
+HALF SUBTRACTOR
+
+CODE
+
+module hs_g(a,b,d,bo);
+input a,b;
+output d,bo;
+assign d= a ^ b;
+assign bo= (~a) & b;
+endmodule
+
+TESTBENCH 
+
+module hsg_tb;
+reg a;
+reg b;
+wire d;
+wire bo;
+ha_g(.a(a), .b(b), .d(d), .bo(bo));
+initial begin
+    a=0;b=0;#50;
+    a=0;b=1;#50;
+    a=1;b=0;#50;
+    a=1;b=1;#50;
+ end
+ endmodule
